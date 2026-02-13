@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>San Valentín 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    background: #f8c8d8;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #fff0f5;
+    width: 80%;
+    max-width: 900px;
+    padding: 60px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    text-align: center;
+    position: relative;
+}
+
+h2 {
+    color: #b76e9e;
+    letter-spacing: 3px;
+    font-size: 18px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    color: #ff4d88;
+    margin: 10px 0;
+}
+
+p {
+    color: #7a5c75;
+    margin-bottom: 40px;
+}
+
+.botones {
+    margin-top: 20px;
+}
+
+button {
+    padding: 15px 35px;
+    font-size: 20px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#si {
+    background: #ff4d88;
+    color: white;
+}
+
+#no {
+    background: #c8a2c8;
+    color: white;
+    margin-left: 20px;
+}
+
+.hearts {
+    position: absolute;
+    font-size: 25px;
+    animation: flotar 5s infinite ease-in-out;
+}
+
+@keyframes flotar {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>14 DE FEBRERO</h2>
+    <h1>¿Quieres ser mi San Valentín? 💕</h1>
+    <p>Prometo chocolates, abrazos y muchas risas 💖</p>
+
+    <div class="botones">
+        <button id="si">Sí 💘</button>
+        <button id="no">No 😢</button>
+    </div>
+
+    <div class="hearts" style="top:20px; left:30px;">💗</div>
+    <div class="hearts" style="bottom:20px; right:40px;">💖</div>
+</div>
+
+<script>
+let botonSi = document.getElementById("si");
+let botonNo = document.getElementById("no");
+let tamaño = 20;
+
+botonNo.addEventListener("click", function() {
+    tamaño += 15;
+    botonSi.style.fontSize = tamaño + "px";
+    botonSi.style.padding = (tamaño/2) + "px " + tamaño + "px";
+});
+
+botonSi.addEventListener("click", function() {
+    document.querySelector(".container").innerHTML =
+        "<h1>Sabía que dirías que sí 😍💖</h1><p>Prepárate para el mejor San Valentín 💕</p>";
+});
+</script>
+
+</body>
+</html>

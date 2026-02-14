@@ -26,7 +26,6 @@ body {
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     text-align: center;
-    position: relative;
 }
 
 h2 {
@@ -37,14 +36,14 @@ h2 {
 
 h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 60px;
+    font-size: 55px;
     color: #ff4d88;
     margin: 10px 0;
 }
 
 p {
     color: #7a5c75;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .botones {
@@ -71,23 +70,38 @@ button {
     margin-left: 20px;
 }
 
-.hearts {
-    position: absolute;
-    font-size: 25px;
-    animation: flotar 5s infinite ease-in-out;
+img {
+    margin-top: 30px;
+    max-width: 300px;
+    border-radius: 20px;
+    animation: aparecer 1s ease-in-out;
 }
 
-@keyframes flotar {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.frase-final {
+    margin-top: 40px;
+    font-size: 20px;
+    color: #7a5c75;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.frase-final h2 {
+    text-align: center;
+    color: #ff4d88;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="container" id="contenido">
     <h2>14 DE FEBRERO</h2>
     <h1>¿Quieres ser mi San Valentín? 💕</h1>
     <p>Prometo chocolates, abrazos y muchas risas 💖</p>
@@ -96,9 +110,6 @@ button {
         <button id="si">Sí 💘</button>
         <button id="no">No 😢</button>
     </div>
-
-    <div class="hearts" style="top:20px; left:30px;">💗</div>
-    <div class="hearts" style="bottom:20px; right:40px;">💖</div>
 </div>
 
 <script>
@@ -113,8 +124,21 @@ botonNo.addEventListener("click", function() {
 });
 
 botonSi.addEventListener("click", function() {
-    document.querySelector(".container").innerHTML =
-        "<h1>Sabía que dirías que sí 😍💖</h1><p>Prepárate para el mejor San Valentín 💕</p>";
+    document.getElementById("contenido").innerHTML = `
+        <h1>Es que me da wewencha 🥹💕</h1>
+        <img src="wewencha.jpg" alt="Perrito tierno">
+        <p>Pero acepto ser tu San Valentín 💖</p>
+
+        <div class="frase-final">
+            <h2>El amor es un problema matemático ❤️</h2>
+            <ul style="list-style:none; padding:0;">
+                <li>➕ Suma tu alegría</li>
+                <li>➖ Resta las tristezas</li>
+                <li>✖️ Multiplica tu cariño</li>
+                <li>➗ Divídelo entre Tú y Yo 💞</li>
+            </ul>
+        </div>
+    `;
 });
 </script>
 
